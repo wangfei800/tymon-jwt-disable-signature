@@ -118,7 +118,7 @@ class Lcobucci extends Provider
             );
         }
 
-        if (! $jwt->verify($this->signer, $this->getVerificationKey())) {
+        if ($this->laravel['config']['jwt.verifySignature'] && ! $jwt->verify($this->signer, $this->getVerificationKey())) {
             throw new TokenInvalidException('Token Signature could not be verified.');
         }
 

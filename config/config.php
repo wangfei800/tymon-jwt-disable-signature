@@ -31,6 +31,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    |
+    |--------------------------------------------------------------------------
+    |
+    | Sometimes we want to decode the JWT token without verifying signature.
+    | This is useful when we forward JWT token inside a secured network.
+    |
+    */
+
+    'verifySignature' => env('VERIFY_JWT_SIGNATURE'),
+
+    /*
+    |--------------------------------------------------------------------------
     | JWT Authentication Keys
     |--------------------------------------------------------------------------
     |
